@@ -1,150 +1,65 @@
-# Projet_Info_Durand_Lafargue
-Projet de programmation en langage pyhton - IVP1 S1 
-def main():
-  if len(sys.argv) <= 2 :
-    print('''Veuillez renseigner plus d'informations''')
-  else :
-    function = sys.argv[1]
-    if function == 'Choix_Date':
-      if len(sys.arg) != 4 :
-        print('''Il faut renseigner une date de début et une date de fin au format 'YYYY-MM-DD'.''')
-      else : 
-        date_debut = str(sys.argv[2])
-        date_fin = str(sys.argv[3])
-        Choix_Date(date_debut, date_fin)
-    if function == 'graphique':
-      if len(sys.arg) != 5 :
-        print('''Pour afficher le graphique d'une variable en fonction du temps, il faut renseigner :\n - une variable parmi 'lum', 'noise', 'temp', 'co2', 'humidity'\n - une date de début au format 'YYYY-MM-DD'\n - une date de fin au format 'YYYY-MM-DD'.''')
-      else :
-        variable = str(sys.argv[2]) 
-        date_debut = str(sys.argv[3])
-        date_fin = str(sys.argv[4])
-        graphique(variable, date_debut, date_fin)
-    if function == 'minimum':
-      if len(sys.arg) != 5 :
-        print('''Pour afficher le minimum d'une variable, il faut renseigner :\n - une variable parmi 'lum', 'noise', 'temp', 'co2', 'humidity'\n - une date de début au format 'YYYY-MM-DD'\n - une date de fin au format 'YYYY-MM-DD'.''')
-      else :
-        variable = str(sys.argv[2]) 
-        date_debut = str(sys.argv[3])
-        date_fin = str(sys.argv[4])
-        minimum(variable, date_debut, date_fin)
-    if function == 'maximum':
-      if len(sys.arg) != 5 :
-        print('''Pour afficher le maximum d'une variable, il faut renseigner :\n - une variable parmi 'lum', 'noise', 'temp', 'co2', 'humidity'\n - une date de début au format 'YYYY-MM-DD'\n - une date de fin au format 'YYYY-MM-DD'.''')
-      else :
-        variable = str(sys.argv[2]) 
-        date_debut = str(sys.argv[3])
-        date_fin = str(sys.argv[4])
-        maximum(variable, date_debut, date_fin)
-    if function == 'Fusion':
-      if len(sys.arg) != 4 :
-        print('''Il faut renseigner : deux listes''')
-      else :
-        L1 = str(sys.argv[2]) 
-        L2 = str(sys.argv[3])
-        Fusion(L1, L2)
-    if function == 'Tri_Fusion':
-      if len(sys.arg) != 5 :
-        print('''Il faut renseigner : une variable (parmi 'lum', 'noise', 'temp', 'co2', 'humidity'), une date de début et une date de fin au format 'YYYY-MM-DD'.''')
-      else :
-        variable = str(sys.argv[2]) 
-        date_debut = str(sys.argv[3])
-        date_fin = str(sys.argv[4])
-        Tri_Fusion(variable, date_debut, date_fin)
-    if function == 'mediane':
-      if len(sys.arg) != 5 :
-        print('''Pour afficher le médiane d'une variable, il faut renseigner :\n - une variable parmi 'lum', 'noise', 'temp', 'co2', 'humidity'\n - une date de début au format 'YYYY-MM-DD'\n - une date de fin au format 'YYYY-MM-DD'.''')
-      else :
-        variable = str(sys.argv[2]) 
-        date_debut = str(sys.argv[3])
-        date_fin = str(sys.argv[4])
-        mediane(variable, date_debut, date_fin)
-    if function == 'ecart_type':
-      if len(sys.arg) != 5 :
-        print('''Pour afficher l'écart type des valeurs prises par une variable, il faut renseigner :\n - une variable parmi 'lum', 'noise', 'temp', 'co2', 'humidity'\n - une date de début au format 'YYYY-MM-DD'\n - une date de fin au format 'YYYY-MM-DD'.''')
-      else :
-        variable = str(sys.argv[2]) 
-        date_debut = str(sys.argv[3])
-        date_fin = str(sys.argv[4])
-        ecart_type(variable, date_debut, date_fin)
-    if function == 'variance':
-      if len(sys.arg) != 5 :
-        print('''Pour afficher la variance des valeurs prises par une variable, il faut renseigner :\n - une variable parmi 'lum', 'noise', 'temp', 'co2', 'humidity'\n - une date de début au format 'YYYY-MM-DD'\n - une date de fin au format 'YYYY-MM-DD'.''')
-      else :
-        variable = str(sys.argv[2]) 
-        date_debut = str(sys.argv[3])
-        date_fin = str(sys.argv[4])
-        variance(variable, date_debut, date_fin)
-    if function == 'moyenne':
-      if len(sys.arg) != 5 :
-        print('''Pour afficher la moyenne des valeurs prises par une variable, il faut renseigner :\n - une variable parmi 'lum', 'noise', 'temp', 'co2', 'humidity'\n - une date de début au format 'YYYY-MM-DD'\n - une date de fin au format 'YYYY-MM-DD'.''')
-      else :
-        variable = str(sys.argv[2]) 
-        date_debut = str(sys.argv[3])
-        date_fin = str(sys.argv[4])
-        moyenne(variable, date_debut, date_fin)
-    if function == 'moyenne':
-      if len(sys.arg) != 5 :
-        print('''Pour afficher la moyenne des valeurs prises par une variable, il faut renseigner :\n - une variable parmi 'lum', 'noise', 'temp', 'co2', 'humidity'\n - une date de début au format 'YYYY-MM-DD'\n - une date de fin au format 'YYYY-MM-DD'.''')
-      else :
-        variable = str(sys.argv[2]) 
-        date_debut = str(sys.argv[3])
-        date_fin = str(sys.argv[4])
-        moyenne(variable, date_debut, date_fin)
-    if function == 'statistiques':
-      if len(sys.arg) != 5 :
-        print('''Pour afficher les indicateurs statistiques des valeurs prises par une variable, il faut renseigner :\n - une variable parmi 'lum', 'noise', 'temp', 'co2', 'humidity'\n - une date de début au format 'YYYY-MM-DD'\n - une date de fin au format 'YYYY-MM-DD'.''')
-      else :
-        variable = str(sys.argv[2]) 
-        date_debut = str(sys.argv[3])
-        date_fin = str(sys.argv[4])
-        statistiques(variable, date_debut, date_fin)    
-    if function == 'Coef_Correlation_Spearman':
-      if len(sys.arg) != 4 :
-        print('''Pour afficher la valeur du coefficient de corrélation de Spearman entre les deux variables des valeurs prises par une variable, il faut renseigner :\n - 2 variable parmi 'lum', 'noise', 'temp', 'co2', 'humidity'.''')
-      else :
-        donnee1 = str(sys.argv[2]) 
-        donnee2 = str(sys.argv[3])
-        Coef_Correlation_Spearman(donnee1, donnee2)
-    if function == 'Coef_Correlation_Kendall':
-      if len(sys.arg) != 4 :
-        print('''Pour afficher la valeur du coefficient de corrélation de Kendall entre les deux variables des valeurs prises par une variable, il faut renseigner :\n - 2 variable parmi 'lum', 'noise', 'temp', 'co2', 'humidity'.''')
-      else :
-        donnee1 = str(sys.argv[2]) 
-        donnee2 = str(sys.argv[3])
-        Coef_Correlation_Kendall(donnee1, donnee2)
-    if function == 'Alpha':
-      if len(sys.arg) != 4 :
-        print('''Il faut renseigner une date de début et une date de fin au format 'YYYY-MM-DD'.''')
-      else : 
-        date_debut = str(sys.argv[2])
-        date_fin = str(sys.argv[3])
-        Alpha(date_debut, date_fin)
-    if function == 'Point_rosee':
-      if len(sys.arg) != 4 :
-        print('''Il faut renseigner une date de début et une date de fin au format 'YYYY-MM-DD'.''')
-      else : 
-        date_debut = str(sys.argv[2])
-        date_fin = str(sys.argv[3])
-        Point_Rosee(date_debut, date_fin)
-    if function == 'humidex':
-      if len(sys.arg) != 4 :
-        print('''Il faut renseigner une date de début et une date de fin au format 'YYYY-MM-DD'.''')
-      else : 
-        date_debut = str(sys.argv[2])
-        date_fin = str(sys.argv[3])
-        humidex(date_debut, date_fin)
-    if function == 'anomalies':
-      if len(sys.arg) != 5 :
-        print('''Pour afficher graphiquement les anomalies des relevés d'une variable, il faut renseigner :\n - une variable parmi 'lum', 'noise', 'temp', 'co2', 'humidity'\n - une date de début au format 'YYYY-MM-DD'\n - une date de fin au format 'YYYY-MM-DD'.''')
-      else :
-        variable = str(sys.argv[2]) 
-        date_debut = str(sys.argv[3])
-        date_fin = str(sys.argv[4])
-        anomalies(variable, date_debut, date_fin)
+DURAND Maori
 
-  
-if (__name__ == 'main'):
-  main()
+LAFARGUE Pauline
+
+**Algorithme programmation**
+
+Rapport du projet de programmation – Sujet 1
+
+IVP1 S1
+
+Au travers de ce rapport nous allons vous présenter notre démarche lors de ce projet de programmation informatique visant à apprendre l&#39;analyse de données. Celui-ci nous a permis d&#39;appréhender l&#39;utilisation du langage python, d&#39;outils collaboratifs et le design d&#39;algorithme, en manipulant des données liées à notre domaine d&#39;études, le bâtiment.
+
+Tout d&#39;abord, lors de ce travail nous avons décidé de travailler sur la plateforme en ligne Google Colab qui nous permettait d&#39;écrire le code sans avoir besoin de télécharger de logiciel lourd. En effet l&#39;un de nous a travaillé tout au long de ce projet sur un ordinateur de substitution, le sien étant en panne ; google colab était donc la seule option pour notre binôme.
+
+La première étape de ce projet étant de lire le fichier csv fournit, nous faisons le choix d&#39;importer la bibliothèque pandas, une bibliothèque python qui nous permet de lire et analyser des données sous forme de DataFrames. Ainsi la première commande effectuée est « import pandas as pd ». Nous importons matplotlib, commande permettant de générer des graphiques via pandas. Nous importons le module datetime afin de manipuler les dates et les heures.
+
+1. **Lire les données**
+
+Pandas nous permet de lire le fichier csv « post-32566-EIVP\_KM.csv ». La fonction str nous permet ensuite de convertir les données « dates » et les données « heures » en chaînes. Puis nous utilisons la fonction send\_at afin de diviser les données en plusieurs colonnes : une colonne pour la date de la donnée, une colonne pour l&#39;heure et une pour le fuseau horaire. Nous transformons ensuite le format en format date et heure, puis avec la dernière ligne nous supprimons les deux colonnes inutiles. Pour afficher la courbe montrant l&#39;évolution d&#39;une variable en fonction du temps, nous introduisons ensuite une fonction « Choix\_Date » qui prend en compte deux paramètres, « date\_début » et « date\_fin ». Cette fonction « choix date » n&#39;a pas été évidente à intégrer, en effet en premier lieu nous avions fait l&#39;erreur de considérer des arguments comme une chaîne de caractère, nous avions donc un problème après pour comparer les valeurs. La solution que nous avons adoptée est de considérer toutes les données du même jour en prenant le premier indice de ce jour et le dernier indice de ce jour, ce qui garantit d&#39;avoir les données de la journée entière. Enfin, nous utilisons la fonction graphique qui prend la donnée choisie, la date début et la date fin. Nous utilisons matplotlib importé au début qui affiche la courbe d&#39;évolution d&#39;une variable choisie en fonction du temps.
+
+1. **Utiliser des fonctions statistiques**
+
+Afin de trouver le minimum d&#39;une des données du fichier, nous créons une variable mini, nous lui associons la valeur du premier élément de la liste de la donnée choisie. Puis cette variable mini parcours le data frame de la donnée choisie, et est comparée avec chaque élément du data frame. Si cet élément est inférieur à la variable mini, on l&#39;affecte à mini. Ce qui nous donne le minimum de la liste de la donnée choisie.
+
+La méthode utilisée pour trouver le maximum d&#39;une liste est la même, nous choisissons tout d&#39;abord la donnée voulue, puis un intervalle de temps. Nous créons une variable maxi, nous lui associons la valeur du premier élément de la liste de la donnée choisie. Cette variable maxi parcours le data frame et est comparée à chaque élément de celui-ci. Si cet élément est supérieur à la variable maxi, on l&#39;affecte à maxi. Nous obtenons ainsi le maximum.
+
+Afin d&#39;utiliser les fonctions statistiques de la médiane, de l&#39;écart-type, de la variance et de la moyenne, nous réalisons deux tris consécutifs des données : le premier sert à trier l&#39;ensemble du data frame selon les dates, de la plus ancienne à la plus récente. La deuxième étape est de trier par heure. Ceci nous garantit un tri des données par ordre chronologique. Nous calculons ensuite la médiane de cette liste triée. Nous avons décidé de coder la première fonction puis d&#39;implanter les fonctions statistiques suivantes par pandas afin de se concentrer sur un affichage graphique qualitatif par la suite.
+
+Pour l&#39;affichage de l&#39;écart-type, de la variance et de la moyenne, nous importons au préalable la fonction statistics de pandas ce qui nous permet d&#39;utiliser les fonctions suivantes : std pour l&#39;affichage de l&#39;écart-type, var pour la variance et mean pour la moyenne arithmétique des données. Pour chacune des fonctions nous choisissons la variable et l&#39;intervalle de temps pour lesquels nous voulons afficher la fonction.
+
+1. **Calculer l&#39;indice de corrélation entre deux variables**
+
+Pour déterminer la corrélation entre deux variables, nous calculons trois coefficients de corrélation différents. Nous calculons dans un premier temps le coefficient de Pearson, qui permet de calculer à quel point deux variables sont linéairement corrélées. Nous utilisons la notion de figure qui permet de regrouper les courbes de deux variables choisies sur un même graphique. Nous choisissons la première variable, à laquelle nous associons la couleur rouge ce qui va afficher sa courbe en fonction du temps en rouge. Nous choisissons la deuxième variable à laquelle nous associons la couleur bleue. Nous affichons les deux courbes sur le même graphique et nous calculons le coefficient de Pearson qui nous donne la corrélation linéaire entre ces deux variables, que nous affichons dans la légende.
+
+Puis nous répétons la même méthode de représentation des courbes en calculant cette fois-ci l&#39;indice de corrélation de Spearman, qui permet d&#39;estimer à quel point la corrélation entre deux variables peut être décrite par une fonction monotone. Il calcule la corrélation non linéaire de deux variables. La méthode est la même que précédemment, permettant d&#39;afficher les courbes des deux variables sur le même graphique, et l&#39;indice de corrélation de Spearman dans la légende du graphique.
+
+Nous répétons ensuite la même méthode d&#39;application, cette fois-ci pour le calcul du coefficient de corrélation de Kendall entre deux variables, qui peut s&#39;avérer plus pertinent que le coefficient de Spearman. Le Tau de Kendall mesure la corrélation de rang entre deux variables.
+
+Ces trois coefficients de corrélation entre deux variables ont une valeur comprise entre -1 et 1. Dans le code il est possible d&#39;en afficher la valeur dans la légende du graphique obtenu.
+
+1. **Calculer l&#39;indice « humidex »**
+
+L&#39;indice humidex est une formule qui prend en compte la chaleur et l&#39;humidité d&#39;un milieu afin de déterminer l&#39;intensité de chaleur ressentie dans ce milieu. L&#39;indice humidex s&#39;exprime en fonction de la température de l&#39;air de la pièce en degré Celsius, de l&#39;humidité et du point de rosée en degré Celsius. Nous introduisons dans le code le calcul du point de rosée (ou température de rosée), qui correspond à la température à laquelle l&#39;humidité se condense. Pour calculer le point de rosée, nous introduisons alpha, qui s&#39;exprime en fonction de la température de l&#39;air et de l&#39;humidité. Nous choisissons un intervalle de temps où le calculer, nous prenons les valeurs de la température et de l&#39;humidité qui correspondent à cet instant et nous calculons la valeur d&#39;alpha.
+
+Puis pour le calcul du point de rosée, nous prenons la valeur du alpha trouvé puis nous associons au point de rosée noté T\_rosee la formule pour le calculer en fonction de alpha.
+
+Enfin, pour le calcul de l&#39;indice humidex, nous ressaisissons l&#39;intervalle de temps étudié, nous prenons la valeur de la température de l&#39;air à cet instant et la valeur trouvée pour le point de rosée à cet instant. Puis nous associons à l&#39;indice humidex la formule pour le calculer :
+
+Humidex=T\_air +0,5555 [6,11 x e^5417,7530((1/273,16) – (1/273,15+T\_rosee)) – 10]
+
+Nous calculons ainsi l&#39;indice humidex à un instant donné.
+
+1. **Détection d&#39;anomalies**
+
+Afin de trouver d&#39;éventuelles anomalies dans les données analysées, nous commençons par choisir une variable parmi celles étudiées, et un intervalle de temps. Nous prenons un intervalle de confiance de 15 valeurs à partir duquel nous affichons la médiane locale, la moyenne locale et l&#39;écart-type local. Si une donnée au sein de cet intervalle est supérieure : (médiane locale + 0,5 x (écart-type local)) ou si une donnée est inférieure à : (médiane locale – 0,5 x (écart-type local)) alors cette donnée est considérée comme une anomalie. Nous superposons ensuite le graphique obtenu avec la fonction graphique sur la même période mais ne montrant que les anomalies, en créant un data frame (df.iloc[indices\_anomalies]) avec uniquement les anomalies pour la variable choisie. Sur le graphique nous affichons les x en bleu, et le graphique montrant les anomalies en points rouges, grâce à l&#39;argument « ro » dans la fonction plt.plot(). Les anomalies sont donc affichées sur le graphique par des points rouges.
+
+1. **Transfert du code en CLI**
+
+Nous adaptons ensuite le code à un langage en CLI (Command-line interchange). En effet, afin de convertir le code en module et de s&#39;en servir en tant que script, nous utilisons tout d&#39;abord la fonction « main ». Puis, pour importer les fonctions nous utilisons le module « sys.arg » et nous appliquons cette méthode à l&#39;intégralité de notre code afin de pouvoir le lire en tant que script.
+
+1. **Import du code sur Github**
+
+Enfin, afin de créer un lien Github pour lire le code, nous avons créé un nouveau repository via github desktop avec notre code.
 
 
